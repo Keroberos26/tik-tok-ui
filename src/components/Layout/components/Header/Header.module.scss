@@ -1,4 +1,5 @@
 $search-border-radius: 92px;
+$text-color: rgb(22, 24, 35);
 
 @function textColorAlpha($alpha) {
   @return rgba(22, 24, 35, $alpha);
@@ -22,7 +23,7 @@ $search-border-radius: 92px;
   position: relative;
   width: 500px;
   height: 46px;
-  background-color: textColorAlpha(0.06);
+  background-color: rgba($text-color, 0.06);
   border-radius: $search-border-radius;
   padding-left: 16px;
   display: flex;
@@ -45,21 +46,35 @@ $search-border-radius: 92px;
 
   &:focus-within,
   &:hover {
-    border-color: textColorAlpha(0.2);
+    border-color: rgba($text-color, 0.2);
   }
 
   &:hover {
     .search-btn {
-      color: textColorAlpha(1);
-      background-color: textColorAlpha(0.06);
+      color: $text-color;
+      background-color: rgba($text-color, 0.06);
     }
   }
+
+  &-title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.093px;
+    color: rgba($text-color, 0.5);
+    font-weight: 600;
+  }
+}
+
+.search-result {
+  width: 500px;
 }
 
 .clear,
 .loading {
   position: absolute;
-  color: textColorAlpha(0.34);
+  color: rgba($text-color, 0.34);
   right: calc(52px + 16px);
   top: 50%;
   transform: translateY(-50%);
@@ -71,7 +86,7 @@ $search-border-radius: 92px;
   height: 100%;
   border-top-right-radius: $search-border-radius;
   border-bottom-right-radius: $search-border-radius;
-  color: textColorAlpha(0.34);
+  color: rgba($text-color, 0.34);
   font-size: 1.8rem;
   cursor: pointer;
 
@@ -82,6 +97,6 @@ $search-border-radius: 92px;
     width: 1px;
     height: 28px;
     left: 0px;
-    background-color: textColorAlpha(0.12);
+    background-color: rgba($text-color, 0.12);
   }
 }
