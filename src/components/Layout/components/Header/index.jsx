@@ -7,10 +7,12 @@ import {
   faCircleNotch,
   faCircleXmark,
   faMagnifyingGlass,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
+import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
@@ -59,7 +61,18 @@ const Header = () => {
           </div>
         </Tippy>
 
-        <div className={cx("action")}></div>
+        <div className={cx("action")}>
+          <Button
+            variant="secondary"
+            outline
+            rounded="2"
+            size="small"
+            leftIcon={<FontAwesomeIcon icon={faPlus} />}
+          >
+            Tải lên
+          </Button>
+          <Button variant="primary">Đăng nhập</Button>
+        </div>
       </div>
     </header>
   );
