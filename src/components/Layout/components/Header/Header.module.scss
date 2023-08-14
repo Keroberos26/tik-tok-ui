@@ -100,3 +100,16 @@ $text-color: rgb(22, 24, 35);
     background-color: rgba($text-color, 0.12);
   }
 }
+
+.more-btn {
+  font-size: 2rem;
+  margin-left: 28px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+// Menu
+.menu-items {
+  width: 224px;
+  padding: 4px 8px;
+}

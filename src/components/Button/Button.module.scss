@@ -11,7 +11,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   font-family: inherit;
-  line-height: 2rem;
+  line-height: 2.1rem;
   letter-spacing: 0.03px;
   user-select: none;
   cursor: pointer;
@@ -20,6 +20,11 @@
   & + .wrapper {
     margin-left: 16px;
   }
+}
+
+.icon {
+  width: 24px;
+  text-align: center;
 }
 
 // Button type
