@@ -1,23 +1,33 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
-import images from "~/assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faA,
+  faArrowRightFromBracket,
   faCircleNotch,
   faCircleXmark,
   faEllipsisVertical,
+  faGear,
   faMagnifyingGlass,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import {
+  faBookmark,
   faCircleQuestion,
+  faCreditCard,
   faKeyboard,
+  faMessage,
   faMoon,
+  faPaperPlane,
+  faUser,
 } from "@fortawesome/free-regular-svg-icons";
-import Tippy from "@tippyjs/react/headless";
+import Tippy from "@tippyjs/react";
+import HeadlessTippy from "@tippyjs/react/headless";
+import "tippy.js/dist/tippy.css";
+
 import { Wrapper as PopperWrapper } from "~/components/Popper";
+import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
@@ -61,11 +71,12 @@ const MENU_ITEMS = [
 
 const Header = () => {
   const [searchResult, setSearchResult] = useState([]);
+  const currentUser = true;
 
   useEffect(() => {
     setTimeout(() => {
       setSearchResult([1]);
-    }, 3000);
+    }, 2000);
   });
 
   const handleMenuChange = (menuItem) => {
@@ -79,6 +90,36 @@ const Header = () => {
     }
   };
 
+  const userMenu = [
+    {
+      icon: <FontAwesomeIcon icon={faUser} />,
+      title: "Xem hồ sơ",
+      to: "/@keroberos",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faBookmark} />,
+      title: "Yêu thích",
+      to: "/@keroberos",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCreditCard} />,
+      title: "Nhận xu",
+      to: "/coin",
+    },
+    {
+      icon: <FontAwesomeIcon icon={faGear} />,
+      title: "Cài đặt",
+      to: "/setting",
+    },
+    ...MENU_ITEMS,
+    {
+      icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+      title: "Đăng xuất",
+      to: "/log-out",
+      separate: true,
+    },
+  ];
+
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
@@ -86,7 +127,7 @@ const Header = () => {
           <img src={images.logo} alt="TikTok" />
         </div>
 
-        <Tippy
+        <HeadlessTippy
           interactive
           visible={searchResult.length}
           render={(attrs) => (
@@ -113,7 +154,7 @@ const Header = () => {
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>
           </div>
-        </Tippy>
+        </HeadlessTippy>
 
         <div className={cx("action")}>
           <Button
@@ -125,11 +166,39 @@ const Header = () => {
           >
             Tải lên
           </Button>
-          <Button variant="primary">Đăng nhập</Button>
-          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
-            <button className={cx("more-btn")}>
-              <FontAwesomeIcon icon={faEllipsisVertical} />
-            </button>
+          {currentUser ? (
+            <>
+              <Tippy content="Tin nhắn" delay="0" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                </button>
+              </Tippy>
+              <Tippy content="Hộp thư" delay="0" placement="bottom">
+                <button className={cx("action-btn")}>
+                  <FontAwesomeIcon icon={faMessage} />
+                </button>
+              </Tippy>
+            </>
+          ) : (
+            <>
+              <Button variant="primary">Đăng nhập</Button>
+            </>
+          )}
+          <Menu
+            items={currentUser ? userMenu : MENU_ITEMS}
+            onChange={handleMenuChange}
+          >
+            {currentUser ? (
+              <img
+                className={cx("user-avatar")}
+                src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/357713752_3185336371765882_3336084960555653097_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=4zTlzr_5EeoAX9rujzb&_nc_ht=scontent.fdad1-3.fna&oh=00_AfANlbntqf8UPIzAIQXRekS3xuMGoCDAKu0H7ukSmqKj9w&oe=64E14ED6"
+                alt="Phan Đỗ Thảo Linh"
+              />
+            ) : (
+              <button className={cx("more-btn")}>
+                <FontAwesomeIcon icon={faEllipsisVertical} />
+              </button>
+            )}
           </Menu>
         </div>
       </div>

@@ -9,6 +9,10 @@
     font-weight: 600;
     padding: 10px 8px;
 
+    &.separate {
+      border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+
     &:hover {
       background-color: rgba(22, 24, 35, 0.03);
     }

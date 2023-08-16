@@ -9,7 +9,7 @@ const Button = ({
   to,
   variant,
   outline = false,
-  size = "m",
+  size,
   children,
   disabled = false,
   rounded,
