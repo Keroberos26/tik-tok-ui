@@ -28,6 +28,21 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faA} />,
     title: "Tiếng Việt",
+    children: {
+      title: "Ngôn ngữ",
+      data: [
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -52,6 +67,17 @@ const Header = () => {
       setSearchResult([1]);
     }, 3000);
   });
+
+  const handleMenuChange = (menuItem) => {
+    switch (menuItem.type) {
+      case "language":
+        // Handle language
+        console.log(menuItem);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <header className={cx("wrapper")}>
@@ -100,7 +126,7 @@ const Header = () => {
             Tải lên
           </Button>
           <Button variant="primary">Đăng nhập</Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx("more-btn")}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
