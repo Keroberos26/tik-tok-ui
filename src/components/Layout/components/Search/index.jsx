@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Search.module.scss";
 import classNames from "classnames/bind";
+import { useDebounce } from "~/hooks";
 const cx = classNames.bind(styles);
 
 const Search = () => {
@@ -18,10 +19,12 @@ const Search = () => {
   const [showResult, setShowResult] = useState(true);
   const [loading, setLoading] = useState(false);
 
+  const debounced = useDebounce(searchValue, 500);
+
   const inputRef = useRef();
 
   useEffect(() => {
-    if (!searchValue.trim()) {
+    if (!debounced.trim()) {
       setSearchResult([]);
       return;
     }
@@ -30,7 +33,7 @@ const Search = () => {
 
     fetch(
       `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-        searchValue
+        debounced
       )}&type=less`
     )
       .then((res) => res.json())
@@ -41,7 +44,7 @@ const Search = () => {
       .catch(() => {
         setLoading(false);
       });
-  }, [searchValue]);
+  }, [debounced]);
 
   const handleClear = () => {
     setSearchValue("");

@@ -19,7 +19,14 @@ $text-color: rgb(22, 24, 35);
     line-height: 2.1rem;
     font-size: 1.6rem;
     background-color: transparent;
-    appearance: textfield;
+    --webkit-appearance: none;
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
 
     &:not(:placeholder-shown) ~ .search-btn {
       color: $text-color;
