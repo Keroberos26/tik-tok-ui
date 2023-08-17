@@ -31,6 +31,7 @@ import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -189,7 +190,7 @@ const Header = () => {
             onChange={handleMenuChange}
           >
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/357713752_3185336371765882_3336084960555653097_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=4zTlzr_5EeoAX9rujzb&_nc_ht=scontent.fdad1-3.fna&oh=00_AfANlbntqf8UPIzAIQXRekS3xuMGoCDAKu0H7ukSmqKj9w&oe=64E14ED6"
                 alt="Phan Đỗ Thảo Linh"
