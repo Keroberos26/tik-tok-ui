@@ -27,6 +27,7 @@ import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
 import Image from "~/components/Image";
 import Search from "../Search";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -113,7 +114,9 @@ const Header = () => {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div className={cx("logo")}>
-          <img src={images.logo} alt="TikTok" />
+          <Link to="/">
+            <img src={images.logo} alt="TikTok" />
+          </Link>
         </div>
 
         <Search />
