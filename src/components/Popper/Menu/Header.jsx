@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 const Header = ({ title, onBack }) => {
   return (
-    <header className={cx("header")}>
+    <header className={cx("menu-header")}>
       <button className={cx("back-btn")} onClick={onBack}>
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>

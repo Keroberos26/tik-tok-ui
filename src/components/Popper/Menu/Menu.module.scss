@@ -18,12 +18,12 @@
     }
   }
 }
-
 // Header
-.header {
+.menu-header {
   position: relative;
   height: 50px;
   margin-top: -8px;
+  flex-shrink: 0;
 }
 
 .back-btn {
@@ -39,4 +39,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
+}
+
+// Menu body
+.menu-body {
+  overflow-y: auto;
 }

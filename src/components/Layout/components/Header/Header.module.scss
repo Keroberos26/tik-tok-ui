@@ -1,8 +1,14 @@
 $text-color: rgb(22, 24, 35);
 
 .wrapper {
-  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: var(--default-layout-header-height);
+  width: 100%;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+  background-color: white;
 }
 
 .inner {
@@ -12,6 +18,10 @@ $text-color: rgb(22, 24, 35);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logo img {
+  display: block;
 }
 
 // Actions

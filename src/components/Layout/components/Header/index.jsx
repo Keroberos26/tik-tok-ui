@@ -21,13 +21,14 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import { Link } from "react-router-dom";
 
 import images from "~/assets/images";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
 import Image from "~/components/Image";
 import Search from "../Search";
-import { Link } from "react-router-dom";
+import routesConfig from "~/config/routes";
 
 const cx = classNames.bind(styles);
 
@@ -38,6 +39,246 @@ const MENU_ITEMS = [
     children: {
       title: "Ngôn ngữ",
       data: [
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "en_EN",
+          title: "English",
+        },
+        {
+          type: "language",
+          code: "vi_VN",
+          title: "Tiếng Việt",
+        },
         {
           type: "language",
           code: "en_EN",
@@ -113,11 +354,9 @@ const Header = () => {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <div className={cx("logo")}>
-          <Link to="/">
-            <img src={images.logo} alt="TikTok" />
-          </Link>
-        </div>
+        <Link to={routesConfig.home} className={cx("logo")}>
+          <img src={images.logo} alt="TikTok" />
+        </Link>
 
         <Search />
 
