@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 
 import styles from "./Menu.module.scss";
-import { Wrapper as PopperWrapper } from "~/components/Popper";
+import { Popper } from "~/components/Popper";
 import MenuItem from "./MenuItem";
 import Header from "./Header";
 
@@ -49,7 +49,7 @@ const Menu = ({
       hideOnClick={hideOnClick}
       render={(attrs) => (
         <div className={cx("menu-list")} tabIndex={-1} {...attrs}>
-          <PopperWrapper>
+          <Popper>
             {history.length > 1 && (
               <Header
                 title={current.title}
@@ -59,7 +59,7 @@ const Menu = ({
               />
             )}
             <div className={cx("menu-body")}>{renderItems()}</div>
-          </PopperWrapper>
+          </Popper>
         </div>
       )}
       onHide={() => setHistory((prev) => prev.slice(0, 1))}

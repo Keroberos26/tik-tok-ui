@@ -10,7 +10,7 @@ import classNames from "classnames/bind";
 import styles from "./Search.module.scss";
 
 import AccountItem from "~/components/AccountItem";
-import { Wrapper as PopperWrapper } from "~/components/Popper";
+import { Popper } from "~/components/Popper";
 import { useDebounce } from "~/hooks";
 import * as searchServices from "~/services/searchService";
 
@@ -68,12 +68,12 @@ const Search = () => {
         visible={searchResult.length && showResult}
         render={(attrs) => (
           <div className={cx("search-result")} tabIndex={-1} {...attrs}>
-            <PopperWrapper>
+            <Popper>
               <h4 className={cx("search-title")}>Tài khoản</h4>
               {searchResult.map((result) => (
                 <AccountItem key={result.id} data={result} />
               ))}
-            </PopperWrapper>
+            </Popper>
           </div>
         )}
         onClickOutside={handleHideResult}
