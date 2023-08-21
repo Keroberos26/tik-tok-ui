@@ -12,7 +12,7 @@ import styles from "./Search.module.scss";
 import AccountItem from "~/components/AccountItem";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import { useDebounce } from "~/hooks";
-import * as searchServices from "~/apiServices/searchServices";
+import * as searchServices from "~/services/searchService";
 
 const cx = classNames.bind(styles);
 
