@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames/bind";
 import styles from "./Button.module.scss";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const cx = classNames.bind(styles);
 
@@ -54,6 +55,20 @@ const Button = ({
       {rightIcon && <span className={cx("icon")}>{rightIcon}</span>}
     </Comp>
   );
+};
+
+Button.propTypes = {
+  to: PropTypes.string,
+  variant: PropTypes.string,
+  outline: PropTypes.bool,
+  size: PropTypes.oneOf(["small", "large"]),
+  children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
+  rounded: PropTypes.string,
+  className: PropTypes.string,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+  onClick: PropTypes.func,
 };
 
 export default Button;
