@@ -37,7 +37,7 @@ const Button = ({
     Comp = Link;
   }
 
-  const classes = cx("wrapper", {
+  const classes = cx("button", {
     [className]: className,
     [variant]: variant,
     [size]: size,

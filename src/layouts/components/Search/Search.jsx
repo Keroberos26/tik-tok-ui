@@ -10,7 +10,7 @@ import classNames from "classnames/bind";
 import styles from "./Search.module.scss";
 
 import AccountItem from "~/components/AccountItem";
-import { Popper } from "~/components/Popper";
+import Popper from "~/components/Popper";
 import { useDebounce } from "~/hooks";
 import * as searchServices from "~/services/searchService";
 
@@ -19,15 +19,15 @@ const cx = classNames.bind(styles);
 const Search = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const debounced = useDebounce(searchValue, 500);
+  const debouncedValue = useDebounce(searchValue, 500);
 
   const inputRef = useRef();
 
   useEffect(() => {
-    if (!debounced.trim()) {
+    if (!debouncedValue.trim()) {
       setSearchResult([]);
       return;
     }
@@ -35,14 +35,14 @@ const Search = () => {
     const fetchApi = async () => {
       setLoading(true);
 
-      const result = await searchServices.search(debounced);
+      const result = await searchServices.search(debouncedValue);
       setSearchResult(result);
 
       setLoading(false);
     };
 
     fetchApi();
-  }, [debounced]);
+  }, [debouncedValue]);
 
   const handleChange = (e) => {
     const searchValue = e.target.value;
