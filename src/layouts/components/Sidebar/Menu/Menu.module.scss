@@ -1,0 +1,40 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.028px;
+  line-height: 2.4rem;
+  transition: background-color ease-in-out 200ms;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+
+  &.active {
+    background-color: rgba(22, 24, 35, 0.03);
+    color: rgba(254, 44, 85, 1);
+
+    .icon {
+      display: none;
+    }
+
+    .active-icon {
+      display: flex;
+    }
+  }
+}
+
+.icon {
+  display: flex;
+}
+
+.active-icon {
+  display: none;
+}
+
+.title {
+  margin-left: 8px;
+}
