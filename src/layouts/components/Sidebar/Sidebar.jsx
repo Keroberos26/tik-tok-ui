@@ -13,6 +13,7 @@ import {
   UserGroupActiveIcon,
   UserGroupIcon,
 } from '~/components/Icons';
+import UserFollowing from './UsersFollowing';
 
 const cx = classNames.bind(styles);
 
@@ -35,6 +36,7 @@ const Sidebar = () => {
         />
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
       </Menu>
+      <UserFollowing label="Các tài khoản đang follow" />
     </aside>
   );
 };

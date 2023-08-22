@@ -1,12 +1,12 @@
-@import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap");
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 
 :root {
   --primary: #fe2c55;
   --secondary: rgba(22, 24, 35, 0.12);
   --text-color: rgb(22, 24, 35);
 
-  --font-family: "IBM Plex Sans", sans-serif;
+  --font-family: 'IBM Plex Sans', sans-serif;
 
   --default-layout-header-height: 60px;
 }
@@ -19,6 +19,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: inherit;
 }
 
 body {
@@ -71,7 +72,7 @@ body .tippy {
     font-weight: 600;
     font-size: 1.6rem;
 
-    &[data-placement^="bottom"] > .tippy-arrow:before {
+    &[data-placement^='bottom'] > .tippy-arrow:before {
       top: -8px;
     }
   }

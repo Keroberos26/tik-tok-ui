@@ -1,0 +1,99 @@
+$text-color: rgb(22, 24, 35);
+
+.wrapper {
+  position: relative;
+  padding: 16px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+
+.label {
+  padding: 0 8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba($color: $text-color, $alpha: 0.75);
+  line-height: 18px;
+  letter-spacing: 0.093px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out 0s;
+
+  &:hover {
+    background-color: rgba($color: $text-color, $alpha: 0.03);
+  }
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.username {
+  font-size: 1.6rem;
+  letter-spacing: 0.03px;
+  line-height: 2.1rem;
+  font-weight: 700;
+  margin-top: -4px; // Bug -2
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.check {
+  font-size: 1.2rem;
+  color: #20d5ec;
+  margin-left: 6px;
+}
+
+.name {
+  display: block;
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+  color: rgba($color: $text-color, $alpha: 0.75);
+  font-weight: 400;
+  letter-spacing: 0.161px;
+  line-height: 1.5rem;
+  max-width: 145px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-see-more {
+  padding: 0px 8px;
+  border: none;
+  margin-top: 8px;
+  background: transparent;
+  color: rgb(254, 44, 85);
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.093px;
+  cursor: pointer;
+}

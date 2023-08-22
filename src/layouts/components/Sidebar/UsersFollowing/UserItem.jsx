@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
-import styles from './AccountItem.module.scss';
+import styles from './UsersFollowing.module.scss';
 import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
-const AccountItem = ({ data }) => {
+const UserItem = ({ data }) => {
   return (
-    <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+    <Link to={`/@${data.nickname}`} className={cx('user-item')}>
       <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
       <div className={cx('info')}>
         <h4 className={cx('username')}>
@@ -25,8 +25,8 @@ const AccountItem = ({ data }) => {
   );
 };
 
-AccountItem.propTypes = {
+UserItem.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default AccountItem;
+export default UserItem;
