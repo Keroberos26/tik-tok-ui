@@ -1,4 +1,6 @@
 .wrapper {
+  max-height: calc((100vh - var(--default-layout-header-height)));
   width: 232px;
   padding: 20px 0 26px 8px;
+  overflow-y: overlay;
 }

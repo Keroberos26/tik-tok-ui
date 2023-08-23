@@ -36,7 +36,7 @@ const Sidebar = () => {
         />
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
       </Menu>
-      <UserFollowing label="Các tài khoản đang follow" />
+      <UserFollowing label="Tài khoản đề xuất" />
     </aside>
   );
 };

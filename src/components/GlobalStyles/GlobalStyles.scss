@@ -37,8 +37,7 @@ html *::-webkit-scrollbar {
 
   &-thumb {
     border-radius: 4px;
-    // 0.06
-    background-color: rgba(22, 24, 35, 0.26);
+    background-color: rgba(22, 24, 35, 0.06);
   }
 
   &-track {
