@@ -7,9 +7,9 @@ import Tippy from '@tippyjs/react/headless';
 import PropTypes from 'prop-types';
 
 import styles from './UsersFollowing.module.scss';
-import Image from '~/components/Image';
 import Popper from '~/components/Popper/Popper';
 import UserPreview from './UserPreview';
+import Avatar from '~/components/Image/Avatar';
 
 const cx = classNames.bind(styles);
 
@@ -28,7 +28,7 @@ const UserItem = ({ data }) => {
     <div>
       <Tippy interactive delay={[600, 0]} render={renderPreview} placement="bottom" offset={[0, -2]}>
         <Link to={`/@${data.nickname}`} className={cx('user-item')}>
-          <Image className={cx('avatar')} src={data.avatar} alt={data.nickname} />
+          <Avatar data={data} size="s" />
           <div className={cx('info')}>
             <h4 className={cx('username')}>
               <span>{data.nickname}</span>

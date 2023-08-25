@@ -1,0 +1,21 @@
+.avatar {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.size {
+  &-s {
+    width: 32px;
+    height: 32px;
+  }
+
+  &-l {
+    width: 116px;
+    height: 116px;
+  }
+}

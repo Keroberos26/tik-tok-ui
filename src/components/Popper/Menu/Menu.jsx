@@ -1,23 +1,18 @@
-import Tippy from "@tippyjs/react/headless";
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames/bind";
+import Tippy from '@tippyjs/react/headless';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
-import styles from "./Menu.module.scss";
-import Popper from "~/components/Popper";
-import MenuItem from "./MenuItem";
-import Header from "./Header";
+import styles from './Menu.module.scss';
+import Popper from '~/components/Popper';
+import MenuItem from './MenuItem';
+import Header from './Header';
 
 const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-const Menu = ({
-  children,
-  items = [],
-  hideOnClick = false,
-  onChange = defaultFn,
-}) => {
+const Menu = ({ children, items = [], className, hideOnClick = false, onChange = defaultFn }) => {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -51,17 +46,15 @@ const Menu = ({
   return (
     <Tippy
       interactive
-      offset={[12, 8]}
-      delay={[0, 700]}
+      offset={[12, 12]}
+      delay={[0, 500]}
       placement="bottom-end"
       hideOnClick={hideOnClick}
       render={(attrs) => (
-        <div className={cx("menu-list")} tabIndex={-1} {...attrs}>
+        <div className={cx('menu-list', className)} tabIndex={-1} {...attrs}>
           <Popper>
-            {history.length > 1 && (
-              <Header title={current.title} onBack={handleBack} />
-            )}
-            <div className={cx("menu-body")}>{renderItems()}</div>
+            {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
+            <div className={cx('menu-body')}>{renderItems()}</div>
           </Popper>
         </div>
       )}
@@ -73,6 +66,8 @@ const Menu = ({
 };
 
 Menu.propTypes = {
+  className: PropTypes.string,
+  classNameItem: PropTypes.string,
   children: PropTypes.node.isRequired,
   items: PropTypes.array,
   hideOnClick: PropTypes.bool,

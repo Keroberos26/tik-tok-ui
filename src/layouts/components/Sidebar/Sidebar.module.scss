@@ -1,6 +1,31 @@
 .wrapper {
   max-height: calc((100vh - var(--default-layout-header-height)));
-  width: 232px;
+  width: 240px;
   padding: 20px 0 26px 8px;
   overflow-y: overlay;
+}
+
+.footer {
+  padding-top: 16px;
+  padding-left: 8px;
+}
+
+.link-container {
+  margin-bottom: 8px;
+
+  a,
+  .copyright {
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.161px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }

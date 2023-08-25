@@ -27,12 +27,7 @@
     background-color: var(--primary);
 
     &:hover {
-      background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.06),
-          rgba(0, 0, 0, 0.06)
-        ),
-        #fe2c55;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
     }
 
     &.outline {
@@ -62,6 +57,11 @@
         background-color: rgba(22, 24, 35, 0.03);
       }
     }
+  }
+
+  &.plain {
+    min-width: 0 !important;
+    width: fit-content;
   }
 
   // Button size

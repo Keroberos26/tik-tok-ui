@@ -6,14 +6,14 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 import styles from './AccountItem.module.scss';
-import Image from '~/components/Image';
+import Avatar from '../Image/Avatar';
 
 const cx = classNames.bind(styles);
 
 const AccountItem = ({ data }) => {
   return (
     <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
-      <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
+      <Avatar data={data} size="s" />
       <div className={cx('info')}>
         <h4 className={cx('username')}>
           <span>{data.nickname}</span>
