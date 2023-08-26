@@ -7,9 +7,10 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 const MenuItem = ({ data, className, onClick }) => {
-  const classes = cx('menu-item', {
+  const classes = cx('menu-item', className, {
     separate: data.separate,
   });
+
   return (
     <Button className={classes} leftIcon={data.icon} to={data.to} onClick={onClick}>
       {data.title}
@@ -19,6 +20,7 @@ const MenuItem = ({ data, className, onClick }) => {
 
 MenuItem.propTypes = {
   data: PropTypes.object.isRequired,
+  classNames: PropTypes.string,
   onClick: PropTypes.func,
 };
 

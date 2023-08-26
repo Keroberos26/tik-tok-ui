@@ -6,7 +6,8 @@ import styles from './Profile.module.scss';
 import Avatar from '~/components/Image/Avatar';
 import Button from '~/components/Button/';
 import ShareOption from '~/components/Popper/ShareOption';
-import { CheckIcon, MoreHorizontalIcon, ShareIcon } from '~/components/Icons';
+import { BanIcon, CheckIcon, FlagIcon, MessageIcon, MoreHorizontalIcon, ShareIcon } from '~/components/Icons';
+import Menu from '~/components/Popper/Menu/Menu';
 
 // Format number with K and M
 function formatNumber(number) {
@@ -24,6 +25,21 @@ function formatNumber(number) {
 
   return number.toFixed(1) + units[unitIndex];
 }
+
+const MORE_ACTION = [
+  {
+    icon: <MessageIcon width="1.6rem" height="1.6rem" />,
+    title: 'Gửi tin nhắn',
+  },
+  {
+    icon: <FlagIcon width="1.6rem" height="1.6rem" />,
+    title: 'Báo cáo',
+  },
+  {
+    icon: <BanIcon width="1.6rem" height="1.6rem" />,
+    title: 'Chặn',
+  },
+];
 
 const cx = classNames.bind(styles);
 
@@ -69,7 +85,11 @@ const Header = ({ user }) => {
           </ShareOption>
         </div>
         <div>
-          <MoreHorizontalIcon />
+          <Menu items={MORE_ACTION} classNameItem={cx('more-action-item')}>
+            <span>
+              <MoreHorizontalIcon />
+            </span>
+          </Menu>
         </div>
       </div>
     </div>

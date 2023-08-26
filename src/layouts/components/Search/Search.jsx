@@ -1,24 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
-import HeadlessTippy from "@tippyjs/react/headless";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleNotch,
-  faCircleXmark,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
-import classNames from "classnames/bind";
-import styles from "./Search.module.scss";
+import React, { useEffect, useRef, useState } from 'react';
+import HeadlessTippy from '@tippyjs/react/headless';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNotch, faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames/bind';
+import styles from './Search.module.scss';
 
-import AccountItem from "~/components/AccountItem";
-import Popper from "~/components/Popper";
-import { useDebounce } from "~/hooks";
-import * as searchServices from "~/services/searchService";
+import AccountItem from '~/components/AccountItem';
+import Popper from '~/components/Popper';
+import { useDebounce } from '~/hooks';
+import * as searchServices from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 
 const Search = () => {
   const [searchResult, setSearchResult] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -47,11 +43,11 @@ const Search = () => {
   const handleChange = (e) => {
     const searchValue = e.target.value;
 
-    if (!searchValue.startsWith(" ")) setSearchValue(searchValue);
+    if (!searchValue.startsWith(' ')) setSearchValue(searchValue);
   };
 
   const handleClear = () => {
-    setSearchValue("");
+    setSearchValue('');
     setSearchResult([]);
     inputRef.current.focus();
   };
@@ -67,9 +63,9 @@ const Search = () => {
         interactive
         visible={searchResult.length && showResult}
         render={(attrs) => (
-          <div className={cx("search-result")} tabIndex={-1} {...attrs}>
+          <div className={cx('search-result')} tabIndex={-1} {...attrs}>
             <Popper>
-              <h4 className={cx("search-title")}>Tài khoản</h4>
+              <h4 className={cx('search-title')}>Tài khoản</h4>
               {searchResult.map((result) => (
                 <AccountItem key={result.id} data={result} />
               ))}
@@ -78,7 +74,7 @@ const Search = () => {
         )}
         onClickOutside={handleHideResult}
       >
-        <div className={cx("search")}>
+        <div className={cx('search')}>
           <input
             ref={inputRef}
             type="search"
@@ -89,19 +85,13 @@ const Search = () => {
           />
 
           {!!searchValue && !loading && (
-            <button className={cx("clear")} onClick={handleClear}>
+            <button className={cx('clear')} onClick={handleClear}>
               <FontAwesomeIcon icon={faCircleXmark} />
             </button>
           )}
-          {loading && (
-            <FontAwesomeIcon className={cx("loading")} icon={faCircleNotch} />
-          )}
+          {loading && <FontAwesomeIcon className={cx('loading')} icon={faCircleNotch} />}
 
-          <button
-            type="submit"
-            className={cx("search-btn")}
-            onMouseDown={(e) => e.preventDefault()}
-          >
+          <button type="submit" className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </div>

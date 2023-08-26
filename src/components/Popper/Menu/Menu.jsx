@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-const Menu = ({ children, items = [], className, hideOnClick = false, onChange = defaultFn }) => {
+const Menu = ({ children, items = [], className, classNameItem, hideOnClick = false, onChange = defaultFn }) => {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -21,6 +21,7 @@ const Menu = ({ children, items = [], className, hideOnClick = false, onChange =
       const isParent = !!item.children;
       return (
         <MenuItem
+          className={classNameItem}
           key={index}
           data={item}
           onClick={() => {

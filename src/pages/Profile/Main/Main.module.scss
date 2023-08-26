@@ -1,0 +1,35 @@
+.feed-tab {
+  position: relative;
+  display: flex;
+  justify-content: stretch;
+  height: 44px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 6px;
+    padding: 0 32px;
+    color: rgb(115, 116, 123);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.4rem;
+    letter-spacing: -0.028px;
+    cursor: pointer;
+
+    &.active {
+      color: rgb(22, 24, 35);
+    }
+  }
+}
+
+.line {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: rgba(22, 24, 35, 1);
+  bottom: -1px;
+  transition: transform 0.3s;
+}

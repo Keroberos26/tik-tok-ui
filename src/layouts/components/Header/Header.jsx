@@ -8,6 +8,7 @@ import {
   faCircleQuestion,
   faCreditCard,
   faKeyboard,
+  faLightbulb,
   faMessage,
   faMoon,
   faPaperPlane,
@@ -27,6 +28,11 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
+  {
+    icon: <FontAwesomeIcon icon={faLightbulb} />,
+    title: 'Trung tâm Nhà sáng tạo LIVE',
+    to: '/feedback',
+  },
   {
     icon: <FontAwesomeIcon icon={faA} />,
     title: 'Tiếng Việt',

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import styles from './Profile.module.scss';
 import * as userService from '~/services/userService';
 import Header from './Header';
+import Main from './Main';
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +25,7 @@ const Profile = () => {
   return (
     <div className={cx('wrapper')}>
       <Header user={user} />
-      <div className={cx('user-videos')}></div>
+      <Main />
     </div>
   );
 };

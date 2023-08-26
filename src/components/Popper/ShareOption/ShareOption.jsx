@@ -70,7 +70,7 @@ const cx = classNames.bind(styles);
 
 const ShareOption = ({ data, children }) => {
   return (
-    <Menu items={SHARE_OPTION} className={cx('wrapper')}>
+    <Menu items={SHARE_OPTION} className={cx('wrapper')} classNameItem={cx('share-item')}>
       {children}
     </Menu>
   );
