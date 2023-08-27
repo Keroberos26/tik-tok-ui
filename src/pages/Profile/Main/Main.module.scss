@@ -1,9 +1,11 @@
+// Tabs
 .feed-tab {
   position: relative;
   display: flex;
   justify-content: stretch;
   height: 44px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 8px;
 
   .tab {
     display: flex;
@@ -32,4 +34,11 @@
   background: rgba(22, 24, 35, 1);
   bottom: -1px;
   transition: transform 0.3s;
+}
+
+// Videos
+.feed-video {
+  display: grid;
+  grid-gap: 24px 16px;
+  grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
 }

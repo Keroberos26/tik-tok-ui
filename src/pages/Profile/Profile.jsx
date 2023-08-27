@@ -20,12 +20,10 @@ const Profile = () => {
       .catch((error) => console.log(error));
   }, [nickname]);
 
-  // console.log(user);
-
   return (
     <div className={cx('wrapper')}>
       <Header user={user} />
-      <Main />
+      <Main data={user.videos} />
     </div>
   );
 };
