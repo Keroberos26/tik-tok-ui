@@ -24,7 +24,12 @@ const Main = ({ data }) => {
             {data
               // .filter((video) => video.viewable === 'public')
               .map((video) => (
-                <VideoCard key={video.id} data={video} played={playingVideo === video.id} onPlay={handlePlay} />
+                <VideoCard
+                  key={video.id}
+                  data={video}
+                  played={playingVideo === video.id}
+                  onMouseEnter={() => handlePlay(video.id)}
+                />
               ))}
           </div>
         ) : (

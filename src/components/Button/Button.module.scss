@@ -17,6 +17,11 @@
   cursor: pointer;
   gap: 8px;
 
+  &.button-block {
+    display: flex;
+    width: 100%;
+  }
+
   & + .button {
     margin-left: 16px;
   }

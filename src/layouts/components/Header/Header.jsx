@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,6 +24,7 @@ import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
 import config from '~/config';
+import AuthModal from '~/components/Modal/AuthModal';
 
 const cx = classNames.bind(styles);
 
@@ -308,7 +309,8 @@ const MENU_ITEMS = [
 ];
 
 const Header = () => {
-  const currentUser = true;
+  const currentUser = false;
+  const [showModal, setShowModal] = useState(true);
 
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
@@ -379,7 +381,9 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Button variant="primary">Đăng nhập</Button>
+              <Button variant="primary" onClick={() => setShowModal(true)}>
+                Đăng nhập
+              </Button>
             </>
           )}
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
@@ -397,6 +401,8 @@ const Header = () => {
           </Menu>
         </div>
       </div>
+
+      {showModal && <AuthModal show={showModal} onHide={() => setShowModal(false)} />}
     </header>
   );
 };

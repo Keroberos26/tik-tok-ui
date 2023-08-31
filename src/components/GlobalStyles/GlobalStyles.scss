@@ -65,6 +65,10 @@ video {
   vertical-align: middle;
 }
 
+ul {
+  list-style: none;
+}
+
 // Custom Tippy tooltip
 body .tippy {
   &-box {

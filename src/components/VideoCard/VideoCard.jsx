@@ -8,9 +8,9 @@ import { PlayIcon } from '../Icons';
 
 const cx = classNames.bind(styles);
 
-const Video = ({ data, played = false, onPlay }) => {
+const Video = ({ data, played = false, ...passProps }) => {
   return (
-    <div className={cx('wrapper')} onMouseEnter={() => onPlay(data.id)}>
+    <div className={cx('wrapper')} {...passProps}>
       <Link to={`/@${data.user.nickname}/video/${data.uuid}`}>
         <div className={cx('media')}>
           <div className={cx('thumbnail')} style={{ backgroundImage: `url(${data.thumb_url})` }}></div>
