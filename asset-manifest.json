@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/tik-tok-ui/static/css/main.50c997e9.css",
-    "main.js": "/tik-tok-ui/static/js/main.fb9d8216.js",
-    "static/js/787.f7655913.chunk.js": "/tik-tok-ui/static/js/787.f7655913.chunk.js",
-    "static/media/logo.svg": "/tik-tok-ui/static/media/logo.87ef64661abbb6a9094b4fef5253baa9.svg",
-    "index.html": "/tik-tok-ui/index.html",
-    "main.50c997e9.css.map": "/tik-tok-ui/static/css/main.50c997e9.css.map",
-    "main.fb9d8216.js.map": "/tik-tok-ui/static/js/main.fb9d8216.js.map",
-    "787.f7655913.chunk.js.map": "/tik-tok-ui/static/js/787.f7655913.chunk.js.map"
+    "main.css": "/static/css/main.50c997e9.css",
+    "main.js": "/static/js/main.a3428f22.js",
+    "static/js/787.f7655913.chunk.js": "/static/js/787.f7655913.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.87ef64661abbb6a9094b4fef5253baa9.svg",
+    "index.html": "/index.html",
+    "main.50c997e9.css.map": "/static/css/main.50c997e9.css.map",
+    "main.a3428f22.js.map": "/static/js/main.a3428f22.js.map",
+    "787.f7655913.chunk.js.map": "/static/js/787.f7655913.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.50c997e9.css",
-    "static/js/main.fb9d8216.js"
+    "static/js/main.a3428f22.js"
   ]
 }
